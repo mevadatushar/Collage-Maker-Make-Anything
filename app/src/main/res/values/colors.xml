@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#D9D9D9</color>
+    <color name="blue">#284BC4</color>
+    <color name="darkblue">#031F85</color>
+    <color name="off_pink">#B01162</color>
+    <color name="off_yellow">#CA6033</color>
+    <color name="kathai">#343434</color>
+    <color name="off_gray">#D9D9D9</color>
+    <color name="off_drow">#D5D5D5</color>
+    <color name="selected_text_color">#FFFFFF</color>
+    <color name="unselected_text_color">#000000</color>
+    <color name="link_color">#284BC4</color>
+    <color name="feedback_text">#18829A</color>
+
+
+    <color name="tab_selected_color">#FF000000</color> <!-- Black for selected tab text -->
+    <color name="tab_unselected_color">#66000000</color> <!-- Semi-transparent black for unselected tab text -->
+    <color name="tab_indicator_color">#FF000000</color> <!-- Black for tab indicator -->
+
+
+
+</resources>

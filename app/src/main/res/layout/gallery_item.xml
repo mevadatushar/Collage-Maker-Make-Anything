@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        android:layout_margin="@dimen/_3sdp">
+
+        <ImageView
+            android:id="@+id/image_view_freestyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/image_view_checkmark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+           android:padding="@dimen/_23sdp"
+            android:background="#2E000000"
+            android:src="@drawable/right_tick"
+            app:tint="@color/white" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

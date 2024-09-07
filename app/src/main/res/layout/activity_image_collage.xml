@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".Activity.ImageCollageActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/cardview_images_collage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/off_white"
+            android:padding="@dimen/_10sdp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_45sdp">
+
+                <com.canhub.cropper.CropImageView
+                    android:id="@+id/collageContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_350sdp"
+                    app:cropBorderLineColor="@color/blue"
+                    app:cropBorderLineThickness="@dimen/_1sdp"
+                    app:cropGuidelines="onTouch"
+                    android:paddingTop="4dp"
+                    android:scaleType="matrix"/>
+
+
+
+
+
+
+                <ImageButton
+                    android:id="@+id/add_button"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_below="@+id/collageContainer"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:background="@drawable/ic_question" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/cardview_images_collage"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@color/white"
+                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabIndicator="@drawable/tab_indicator"
+                    app:tabInlineLabel="true"
+                    android:layout_alignParentStart="true"
+                    app:tabGravity="start"
+                    app:tabIndicatorColor="@color/tab_indicator_color"
+                    app:tabSelectedTextColor="@color/tab_selected_color"
+                    app:tabTextColor="@color/tab_unselected_color"
+                    tools:ignore="MissingClass" />
+
+
+                <ImageView
+                    android:id="@+id/imgDone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:foregroundGravity="center_vertical"
+                    android:src="@drawable/right_tick"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>

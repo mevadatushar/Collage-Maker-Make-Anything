@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.PremiumActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_background"
+        android:layout_height="480dp">
+
+
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:background="@drawable/ic_close"
+            android:padding="@dimen/_5sdp" />
+
+        <!-- Image Collage -->
+        <ImageView
+            android:id="@+id/collage_image"
+            android:layout_width="@dimen/_175sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_below="@id/imgBack"
+            android:layout_centerHorizontal="true"
+           android:layout_centerVertical="true"
+            android:background="@drawable/ic_purchase" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/subscription_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_title"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/access_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:text="@string/access_to_all_features_nno_ads"
+            android:textAlignment="center"
+            android:textColor="@color/off_pink"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingTop="4dp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:background="@drawable/btn_free_trial_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/btn_free_trial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="7-Day Free Trial"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingTop="4dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/free_trial_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Than ₹1,000.00 / Year"
+                    android:textSize="@dimen/_7ssp"
+                    android:fontFamily="@font/poppins_medium"
+
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_one_time_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/btn_one_time_purchase_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/one_time_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Then ₹2,050.00 One Time Purchase"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingTop="4dp"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/subscription_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:text="This subscription gives you unlimited access to our app content library. If you don't cancel before the trial ends, you will be automatically charged 1,000.00 each year until you cancel.\nTerms &amp; Conditions"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingTop="4dp"
+            android:textSize="@dimen/_8ssp" />
+
+    </LinearLayout>
+</RelativeLayout>

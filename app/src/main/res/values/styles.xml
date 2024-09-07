@@ -1,0 +1,30 @@
+<resources>
+    <!-- Other styles -->
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item> <!-- Adjust text size -->
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item> <!-- Specify your custom font -->
+        <item name="android:textColor">@color/tab_unselected_color</item> <!-- Default text color -->
+    </style>
+
+    <style name="CustomTabSelectedTextAppearance">
+        <item name="android:textColor">@color/tab_selected_color</item> <!-- Selected text color -->
+    </style>
+
+
+    <style name="ratio">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="background">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CustomRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@color/feedback_text</item>
+        <!-- Adjust other attributes as needed -->
+    </style>
+
+</resources>
