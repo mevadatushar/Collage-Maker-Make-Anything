@@ -20,7 +20,6 @@ import androidx.core.content.FileProvider
 import com.collagemaker_makeanything.R
 import com.collagemaker_makeanything.databinding.ActivityEditImagePickerBinding
 import com.example.photoeditor.beautycamera.EditImagePickerAdapter
-import com.example.photoeditor.beautycamera.ImagePickerAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -160,7 +159,9 @@ class EditImagePickerActivity : BaseActivity() {
     }
 
     private fun arePermissionsGranted(): Boolean {
-        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         } else {
             arrayOf(
@@ -174,7 +175,9 @@ class EditImagePickerActivity : BaseActivity() {
     }
 
     private fun requestPermissions() {
-        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         } else {
             arrayOf(

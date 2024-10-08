@@ -13,13 +13,10 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ProgressBar
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +36,6 @@ import java.util.Locale
 class ImagePickerActivity : BaseActivity() {
 
     lateinit var binding: ActivityImagePickerBinding
-
     private lateinit var progressBar: ProgressBar
     private val imageList = arrayListOf<Uri>()
     private val selectedImagesList = arrayListOf<Uri>()
@@ -52,7 +48,6 @@ class ImagePickerActivity : BaseActivity() {
         const val REQUEST_CAMERA_CODE = 2
         const val REQUEST_CAMERA_PERMISSION = 3
         var currentPhotoPath: String? = null
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,18 +66,15 @@ class ImagePickerActivity : BaseActivity() {
             clearSelectedImages()
         }
 
-        // Initialize ProgressBar
-        progressBar = binding.progressBar // Ensure you have a ProgressBar with this ID in your layout file
+        progressBar = binding.progressBar
 
-
-
-           binding.relativeNextButton.setOnClickListener {
-               val intent = Intent(this, CollagePhotoEditingActivity::class.java)
-               intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
-               Log.d(TAG, "initView:${selectedImagesList}")
-               startActivity(intent)
-               finish()
-           }
+        binding.relativeNextButton.setOnClickListener {
+            val intent = Intent(this, CollagePhotoEditingActivity::class.java)
+            intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
+            Log.d(TAG, "initView:${selectedImagesList}")
+            startActivity(intent)
+            finish()
+        }
 
         val galleryGrid: GridView = findViewById(R.id.gallery_grid)
         adapter = ImagePickerAdapter(this, imageList, selectedImagesList)
@@ -103,11 +95,9 @@ class ImagePickerActivity : BaseActivity() {
                     Log.d(TAG, "Image added: $selectedUri")
                 }
 
-                // Notify adapters of the changes
                 adapter.notifyDataSetChanged()
                 selectedImagesAdapter.notifyDataSetChanged()
 
-                // Update the UI
                 updateNextButtonVisibility()
                 updateImageCount()
             }
@@ -124,25 +114,28 @@ class ImagePickerActivity : BaseActivity() {
             removeSelectedImage(imageUri)
         }
         selectedImagesRecyclerView.adapter = selectedImagesAdapter
-        selectedImagesRecyclerView.layoutManager = GridLayoutManager(this,
-            4, LinearLayoutManager.VERTICAL, false)
+        selectedImagesRecyclerView.layoutManager = GridLayoutManager(this, 4, LinearLayoutManager.VERTICAL, false)
     }
 
     private fun removeSelectedImage(imageUri: Uri) {
         selectedImagesList.remove(imageUri)
         selectedImagesAdapter.notifyDataSetChanged()
-        adapter.notifyDataSetChanged() // Notify the PhotosAdapter to update the GridView
+        adapter.notifyDataSetChanged()
         updateNextButtonVisibility()
         updateImageCount()
     }
 
     private fun clearSelectedImages() {
+        // Clear the selected images list
         selectedImagesList.clear()
-        selectedImagesAdapter.notifyDataSetChanged()
+
+        // Notify both adapters to update the views
+        selectedImagesAdapter.notifyDataSetChanged()  // Updates the RecyclerView
+        adapter.notifyDataSetChanged()  // Updates the GridView to remove checkmarks
+
+        // Update UI elements to reflect the cleared selection
         updateNextButtonVisibility()
         updateImageCount()
-        removeSelectedImage(Uri.EMPTY)
-
     }
 
     private fun updateNextButtonVisibility() {
@@ -167,7 +160,7 @@ class ImagePickerActivity : BaseActivity() {
     }
 
     private fun openCamera() {
-        val photoFile: File = createImageFile() // Method to create image file
+        val photoFile: File = createImageFile()
         val photoURI: Uri = FileProvider.getUriForFile(
             this,
             "${applicationContext.packageName}.fileprovider",
@@ -233,7 +226,9 @@ class ImagePickerActivity : BaseActivity() {
     }
 
     private fun arePermissionsGranted(): Boolean {
-        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         } else {
             arrayOf(
@@ -247,7 +242,9 @@ class ImagePickerActivity : BaseActivity() {
     }
 
     private fun requestPermissions() {
-        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         } else {
             arrayOf(
@@ -291,8 +288,4 @@ class ImagePickerActivity : BaseActivity() {
             updateImageCount()
         }
     }
-
-
-
-
 }

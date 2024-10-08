@@ -12,7 +12,7 @@
 
 
     <RelativeLayout
-        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_26sdp"
 
         android:paddingVertical="@dimen/_20sdp"
         android:paddingHorizontal="@dimen/_10sdp"
@@ -642,6 +642,7 @@
             android:orientation="horizontal">
 
             <SeekBar
+                android:id="@+id/seekBar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -653,10 +654,11 @@
 
 
             <TextView
+                android:id="@+id/seekBarValueText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:text="0"
+                android:text="50"
                 android:fontFamily="@font/poppins_medium"
                 android:paddingTop="4dp"
                 android:textStyle="bold"
@@ -681,7 +683,7 @@
                 tools:ignore="MissingConstraints">
 
                 <LinearLayout
-                    android:id="@+id/lnrCollage"
+                    android:id="@+id/imgAdjustSelectBrightness"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -714,7 +716,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lnrTemplates"
+                    android:id="@+id/imgAdjustSelectContrast"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -748,7 +750,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lnrBeautify"
+                    android:id="@+id/imgAdjustSelectWarmth"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -783,7 +785,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lnrCamera"
+                    android:id="@+id/imgAdjustSelectSaturation"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -815,6 +817,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectFade"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -845,6 +848,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectHighlight"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -872,6 +876,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectShadow"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -905,6 +910,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectTint"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -935,6 +941,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectHue"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -965,6 +972,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/imgAdjustSelectGrain"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -998,6 +1006,8 @@
             </LinearLayout>
 
         </HorizontalScrollView>
+
+
     </LinearLayout>
 
 

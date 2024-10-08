@@ -40,7 +40,6 @@ class CollagePhotoEditingActivity : BaseActivity() {
                 intent.putStringArrayListExtra("imageUris", imageUris)
                 intent.putExtra("layoutRes", layoutRes)
                 startActivity(intent)
-
             }
             relativeText.setOnClickListener {
                 val intent = Intent(this@CollagePhotoEditingActivity, TextActivity::class.java)
@@ -57,6 +56,14 @@ class CollagePhotoEditingActivity : BaseActivity() {
                 startActivity(intent)
 
             }
+
+         /*   relativeFilter.setOnClickListener {
+                val intent = Intent(this@CollagePhotoEditingActivity, FilterActivity::class.java)
+                intent.putStringArrayListExtra("imageUris", imageUris)
+                intent.putExtra("layoutRes", layoutRes)
+                startActivity(intent)
+
+            }   */
 
             backButton.setOnClickListener {
                 onBackPressed()

@@ -55,11 +55,11 @@ class DashboardActivity : BaseActivity() {
         addDotsIndicator()
         viewPager.addOnPageChangeListener(viewListener)
 
-      /*  binding.Collage.setOnClickListener {
+        binding.Collage.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ImagePickerActivity::class.java)
             startActivity(intent)
 
-        } */
+        }
 
         binding.imgPremium.setOnClickListener {
             val intent = Intent(this@DashboardActivity, PremiumActivity::class.java)
