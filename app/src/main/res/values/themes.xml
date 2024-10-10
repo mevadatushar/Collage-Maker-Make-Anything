@@ -16,5 +16,24 @@
 
     </style>
 
+    <!-- res/values/styles.xml -->
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+
+        <item name="android:textSize">10sp</item>
+     //   <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- Custom style for SearchView text -->
+    <style name="SearchViewTextAppearance" parent="android:TextAppearance">
+        <item name="android:textSize">10sp</item> <!-- Change this value to desired size -->
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@android:color/black</item> <!-- Optional: Change text color -->
+    </style>
+
     <style name="Theme.CollageMakerMakeAnything" parent="Base.Theme.CollageMakerMakeAnything" />
+
+
+
+
+
 </resources>

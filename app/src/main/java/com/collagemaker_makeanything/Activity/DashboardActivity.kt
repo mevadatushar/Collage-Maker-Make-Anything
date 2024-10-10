@@ -73,11 +73,11 @@ class DashboardActivity : BaseActivity() {
 
         } */
 
-      /*  binding.imgShop.setOnClickListener {
-            val intent = Intent(this@DashboardActivity, ShopActivity::class.java)
+      binding.imgShop.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, StoreActivity::class.java)
             startActivity(intent)
 
-        } */
+        }
 
        /* binding.Freestyle.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ImagePickerActivity::class.java)
