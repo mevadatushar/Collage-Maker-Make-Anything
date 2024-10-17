@@ -9,7 +9,6 @@
     <string name="edit">Edit</string>
     <string name="background">BACKGROUND</string>
     <string name="crop">Crop</string>
-    <string name="Frame">Frame</string>
     <string name="filter">Filter</string>
     <string name="draw">Draw</string>
     <string name="stiker">Stiker</string>
@@ -116,7 +115,6 @@
     <string name="summer">Summer</string>
     <string name="school">School</string>
     <string name="childhood">Childhood</string>
-    <string name="birthday">Birthday</string>
     <string name="gridart_pro">GridArt Pro</string>
     <string name="free_trail">FREE TRAIL</string>
     <string name="_21_stickers">21 Stickers</string>
@@ -177,7 +175,32 @@
     <string name="FeedbackCaption">Would you mind giving us some feed back ?</string>
     <string name="Nothanks">No,thanks</string>
     <string name="sendFeedback">send Feedback</string>
-    <string name="NotReally">Not really</string>
+    <string name="NotReally">Not Really</string>
+
+    <!-- ______________________Templates Activity________________________-->
+    <string name="All">All</string>
+    <string name="Birthday">Birthday</string>
+    <string name="Calendar">Calendar</string>
+    <string name="Christmas">Christmas</string>
+    <string name="Family">Family</string>
+    <string name="Frame">Frame</string>
+    <string name="Graduation">Graduation</string>
+    <string name="Love">Love</string>
+    <string name="MothersDay">MothersDay</string>
+    <string name="NewYear">NewYear</string>
+    <string name="Pride">Pride</string>
+    <string name="SchoolLife">SchoolLife</string>
+    <string name="Summer">Summer</string>
+    <string name="Travel">Travel</string>
+    <string name="Winter">Winter</string>
+    <!-- ______________________Templates Activity________________________-->
+
+
+    <!-- ______________________Dialog________________________-->
+    <string name="AreYouEditing">Are you satisfied with the\n editing results?</string>
+    <string name="Good">Good</string>
+
+    <!-- ______________________Dialog________________________-->
 
 
 </resources>

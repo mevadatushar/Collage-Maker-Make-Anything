@@ -438,7 +438,7 @@ class FilterActivity : BaseActivity() {
         if (uri != null) {
             val resultIntent = Intent().apply {
                 putExtra("filteredImageUri", uri.toString())
-                Toast.makeText(this@FilterActivity, "Filter Applied Successfully", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this@FilterActivity, "Filter Applied Successfully", Toast.LENGTH_SHORT).show()
             }
             setResult(RESULT_OK, resultIntent)
         } else {

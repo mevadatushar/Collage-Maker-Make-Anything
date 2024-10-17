@@ -27,4 +27,35 @@
         <!-- Adjust other attributes as needed -->
     </style>
 
+    <style name="FullHeightBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <!-- Full-Screen BottomSheetDialog Theme -->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <!-- Remove the top rounded corners -->
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <!-- Make the dialog fullscreen -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Style for the bottom sheet itself -->
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@null</item> <!-- Remove rounded corners -->
+        <item name="android:layout_height">match_parent</item> <!-- Full height -->
+    </style>
+
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">85%</item> <!-- Adjust width as a percentage -->
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
+    <!--bottom sheet dialog -->
+
 </resources>

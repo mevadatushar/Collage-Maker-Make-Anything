@@ -1,4 +1,5 @@
-package com.example.photoeditorpolishanything.Fragment
+package com.collagemaker_makeanything.Fragment
+
 
 import android.content.Context
 import android.os.Bundle

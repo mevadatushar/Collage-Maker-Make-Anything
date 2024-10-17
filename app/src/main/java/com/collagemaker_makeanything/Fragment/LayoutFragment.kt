@@ -1,4 +1,5 @@
-package com.example.photoeditorpolishanything.Fragment
+package com.collagemaker_makeanything.Fragment
+
 
 import android.os.Bundle
 import android.view.LayoutInflater

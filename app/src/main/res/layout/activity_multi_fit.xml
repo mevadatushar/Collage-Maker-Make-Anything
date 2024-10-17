@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:background="@color/off_white">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/backgroundImageView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_margin="@dimen/_15sdp"-->
+<!--                android:background="@color/white">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginHorizontal="@dimen/_40sdp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/bg_rose_love" />-->
+
+<!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/imageView"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginHorizontal="@dimen/_40sdp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scaleType="centerInside"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/bg_rose_love" />&ndash;&gt;-->
+
+<!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/backgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_gravity="center"
+               android:layout_marginVertical="@dimen/_15sdp"
+                android:background="@color/white">
+            </LinearLayout>
+
+
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+
+    <!--    </HorizontalScrollView>-->
+
+
+    <Button
+        android:id="@+id/changeBackgroundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onChangeBackgroundClick"
+        android:text="Change Background" />
+</RelativeLayout>
