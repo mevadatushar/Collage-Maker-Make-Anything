@@ -33,7 +33,7 @@ class FrameActivity : BaseActivity() {
         layoutRes = intent.getIntExtra("layoutRes", R.layout.item_gallery_image)
 
         imageUri = intent.getStringExtra("imageUri") ?: ""
-        croppedImageUri = intent.getStringExtra("croppedImageUri")
+    //    croppedImageUri = intent.getStringExtra("croppedImageUri")
 
 
         initViews()

@@ -16,9 +16,9 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.canhub.cropper.CropImageView
 import com.collagemaker_makeanything.Adapter.TabAdapter
+import com.collagemaker_makeanything.Fragment.RatioFragment
 import com.collagemaker_makeanything.R
 import com.collagemaker_makeanything.databinding.ActivityImageCollageBinding
-import com.example.photoeditorpolishanything.Fragment.RatioFragment
 import com.google.android.material.tabs.TabLayout
 
 class ImageCollageActivity : BaseActivity(), RatioFragment.OnLayoutSelectedListener {

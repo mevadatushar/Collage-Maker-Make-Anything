@@ -61,6 +61,13 @@ class SettingsActivity : BaseActivity() {
                         val i = Intent(this@SettingsActivity, ManageSubscriptionActivity::class.java)
                         startActivity(i)
                     }
+
+                    binding.llSavePath.setOnClickListener {
+                        val i = Intent(this@SettingsActivity, SavePathActivity::class.java)
+                        startActivity(i)
+                    }
+
+
                 }
     }
 

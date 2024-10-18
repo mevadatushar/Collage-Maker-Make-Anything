@@ -16,6 +16,7 @@ import com.collagemaker_makeanything.databinding.ActivityDashboardBinding
 class DashboardActivity : BaseActivity() {
     private lateinit var binding: ActivityDashboardBinding
 
+
     private val imageSlider = arrayListOf(
         R.drawable.featuredimage,
         R.drawable.grid_eid,
@@ -40,6 +41,8 @@ class DashboardActivity : BaseActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         initView()
 
         binding.navSettings.elevation = 4f
@@ -57,8 +60,16 @@ class DashboardActivity : BaseActivity() {
 
         binding.Collage.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ImagePickerActivity::class.java)
+            intent.putExtra("imagePickLimit", 100)
+            intent.putExtra("modeType", "collage")  // Pass mode type as "collage"
             startActivity(intent)
+        }
 
+        binding.multiFit.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, ImagePickerActivity::class.java)
+            intent.putExtra("imagePickLimit", 10)
+            intent.putExtra("modeType", "multifit")  // Pass mode type as "multifit"
+            startActivity(intent)
         }
 
         binding.imgPremium.setOnClickListener {
@@ -67,17 +78,17 @@ class DashboardActivity : BaseActivity() {
 
         }
 
-      /*  binding.Templates.setOnClickListener {
+        binding.Templates.setOnClickListener {
             val intent = Intent(this@DashboardActivity, TemplatesActivity::class.java)
             startActivity(intent)
 
-        } */
+        }
 
-      /*  binding.imgShop.setOnClickListener {
-            val intent = Intent(this@DashboardActivity, ShopActivity::class.java)
+      binding.imgShop.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, StoreActivity::class.java)
             startActivity(intent)
 
-        } */
+        }
 
        /* binding.Freestyle.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ImagePickerActivity::class.java)

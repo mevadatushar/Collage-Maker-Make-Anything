@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -41,6 +42,9 @@ class ImagePickerActivity : BaseActivity() {
     private val selectedImagesList = arrayListOf<Uri>()
     private lateinit var adapter: ImagePickerAdapter
     private lateinit var selectedImagesAdapter: SelectedImagesAdapter
+    private var imagePickLimit = 100  // Default limit is 100
+    private lateinit var modeType: String  // Add a variable for mode type
+
 
     companion object {
         const val TAG = "CollageImageSelect"
@@ -54,6 +58,12 @@ class ImagePickerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityImagePickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Get the image pick limit from the intent
+        imagePickLimit = intent.getIntExtra("imagePickLimit", 100)  // Default is 100
+
+        modeType = intent.getStringExtra("modeType") ?: "collage"  // Default to "collage" mode if not provided
+
         initView()
     }
 
@@ -68,17 +78,57 @@ class ImagePickerActivity : BaseActivity() {
 
         progressBar = binding.progressBar
 
+//        binding.relativeNextButton.setOnClickListener {
+//            val intent = Intent(this, CollagePhotoEditingActivity::class.java)
+//            intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
+//            Log.d(TAG, "initView:${selectedImagesList}")
+//            startActivity(intent)
+//            finish()
+//        }
+
         binding.relativeNextButton.setOnClickListener {
-            val intent = Intent(this, CollagePhotoEditingActivity::class.java)
-            intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
-            Log.d(TAG, "initView:${selectedImagesList}")
-            startActivity(intent)
+            // Check which mode we are in
+            if (modeType == "collage") {
+                // If the user is in collage mode, go to CollagePhotoEditingActivity
+                val intent = Intent(this, CollagePhotoEditingActivity::class.java)
+                intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
+                startActivity(intent)
+            } else if (modeType == "multifit") {
+                // If the user is in multifit mode, go to MultifitActivity
+                val intent = Intent(this, MultiFitActivity::class.java)
+                intent.putStringArrayListExtra("imageUris", ArrayList(selectedImagesList.map { it.toString() }))
+                startActivity(intent)
+            }
             finish()
         }
+
 
         val galleryGrid: GridView = findViewById(R.id.gallery_grid)
         adapter = ImagePickerAdapter(this, imageList, selectedImagesList)
         galleryGrid.adapter = adapter
+
+//        galleryGrid.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+//            if (position == 0) {
+//                checkCameraPermissionAndOpenCamera()
+//            } else {
+//                val actualPosition = position - 1
+//                val selectedUri = imageList[actualPosition]
+//
+//                if (selectedImagesList.contains(selectedUri)) {
+//                    selectedImagesList.remove(selectedUri)
+//                    Log.d(TAG, "Image removed: $selectedUri")
+//                } else {
+//                    selectedImagesList.add(selectedUri)
+//                    Log.d(TAG, "Image added: $selectedUri")
+//                }
+//
+//                adapter.notifyDataSetChanged()
+//                selectedImagesAdapter.notifyDataSetChanged()
+//
+//                updateNextButtonVisibility()
+//                updateImageCount()
+//            }
+//        }
 
         galleryGrid.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             if (position == 0) {
@@ -91,8 +141,15 @@ class ImagePickerActivity : BaseActivity() {
                     selectedImagesList.remove(selectedUri)
                     Log.d(TAG, "Image removed: $selectedUri")
                 } else {
-                    selectedImagesList.add(selectedUri)
-                    Log.d(TAG, "Image added: $selectedUri")
+                    // Check if the pick limit is reached
+                    if (selectedImagesList.size < imagePickLimit) {
+                        selectedImagesList.add(selectedUri)
+                        Log.d(TAG, "Image added: $selectedUri")
+                    } else {
+                        // Show a toast message that the limit is reached
+                        Toast.makeText(this, "You can only select up to $imagePickLimit images.", Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, "Image pick limit reached: $imagePickLimit")
+                    }
                 }
 
                 adapter.notifyDataSetChanged()
@@ -102,6 +159,7 @@ class ImagePickerActivity : BaseActivity() {
                 updateImageCount()
             }
         }
+
 
         if (arePermissionsGranted()) {
             loadImagesFromGallery()
@@ -146,10 +204,23 @@ class ImagePickerActivity : BaseActivity() {
         }
     }
 
+//    private fun updateImageCount() {
+//        val count = selectedImagesList.size
+//        binding.imageCountTextView.text = "Select 1 - 100 Photos ($count)"
+//    }
+
+
     private fun updateImageCount() {
         val count = selectedImagesList.size
-        binding.imageCountTextView.text = "Select 1 - 100 Photos ($count)"
+        // If no images are selected, always show "Select 1 - [imagePickLimit]"
+        if (count == 0) {
+            binding.imageCountTextView.text = "Select 1 - $imagePickLimit Photos"
+        } else {
+            binding.imageCountTextView.text = "Select 1 - $imagePickLimit Photos ($count)"
+        }
     }
+
+
 
     private fun checkCameraPermissionAndOpenCamera() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {

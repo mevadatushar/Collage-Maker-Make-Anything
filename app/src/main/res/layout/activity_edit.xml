@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-
     tools:context=".Activity.EditActivity">
 
 
@@ -97,7 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_34sdp"
             android:layout_below="@+id/collageContainer"
-            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/_5sdp"
@@ -121,18 +121,18 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
                     android:paddingTop="4dp"
                     android:text="    RATIO    "
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
+                    android:textSize="13sp"
+
                     tools:ignore="HardcodedText" />
 
                 <View
                     android:id="@+id/txt_desh"
-                    android:layout_width="2dp"
+                    android:layout_width="@dimen/_2sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="20dp"
@@ -146,16 +146,18 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
                     android:paddingTop="4dp"
                     android:text="@string/background"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="13sp"
+                    />
 
 
             </LinearLayout>
+
+
         </LinearLayout>
 
 
@@ -163,27 +165,30 @@
 
 
     <LinearLayout
-        android:id="@+id/gridOptions"
+        android:id="@+id/container_edit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/cardview_images_collage"
         android:layout_marginTop="5dp"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/_10sdp">
 
 
-        <LinearLayout
+        <HorizontalScrollView
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:scrollbars="none"
             tools:ignore="ScrollViewSize">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:baselineAligned="false"
-                android:weightSum="4">
+                >
 
 
                 <RelativeLayout
@@ -351,16 +356,86 @@
                     </LinearLayout>
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/rlSticker"
+                    android:layout_width="87dp"
+                    android:layout_height="81dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_button"
+                    android:backgroundTint="@color/off_gray">
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/sticker"
+                            tools:ignore="ContentDescription" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:baselineAligned="false"
-                android:weightSum="4">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingTop="4dp"
+                            android:text="Sticker"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlDraw"
+                    android:layout_width="87dp"
+                    android:layout_height="81dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_button"
+                    android:backgroundTint="@color/off_gray">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/draw"
+                            tools:ignore="ContentDescription" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingTop="4dp"
+                            android:text="Draw"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/relative_stiker"
@@ -485,7 +560,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relative_drow"
+                    android:id="@+id/rlEnhance"
                     android:layout_width="83dp"
                     android:layout_height="81dp"
                     android:layout_margin="@dimen/_5sdp"
@@ -523,9 +598,61 @@
                     </LinearLayout>
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/relative_Adjust"
+                    android:layout_width="83dp"
+                    android:layout_height="81dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_button"
+                    android:backgroundTint="@color/off_gray">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/adjust"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingTop="4dp"
+                            android:text="Adjust"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+
 
             </LinearLayout>
-        </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+
+
+
+
+
+
+
     </LinearLayout>
 
 

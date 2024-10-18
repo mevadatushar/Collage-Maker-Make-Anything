@@ -1,0 +1,122 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#5D5D5D"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            >
+
+
+
+            <TextView
+                android:id="@+id/txtCancle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="4dp"
+                android:textColor="@color/white"
+                android:text="Cancel"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+
+            <RelativeLayout
+                android:id="@+id/rlSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/apply_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingTop="4dp"
+                    android:text="Apply"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_10ssp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+        <!-- Original Image -->
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/originalImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_350sdp"
+            android:scaleType="centerInside"
+            android:contentDescription="Original Image" />
+
+        <!-- Enhanced Image -->
+
+        <!-- Divider (the vertical line between before and after) -->
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/enhancedImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_350sdp"
+            android:contentDescription="Enhanced Image"
+            android:scaleType="centerInside" />
+
+        <View
+
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:id="@+id/divider"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_gravity="center" />
+
+        <!-- Handle for dragging the divider -->
+        <View
+            android:id="@+id/dividerHandle"
+            android:layout_width="35dp"
+            android:layout_height="24dp"
+            android:background="@drawable/split"
+            android:layout_marginBottom="@dimen/_150sdp"
+            android:layout_gravity="center|bottom" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            android:elevation="@dimen/_10sdp"
+            android:layout_gravity="bottom"
+
+            />
+
+
+    </FrameLayout>
+
+</LinearLayout>
+
+
+

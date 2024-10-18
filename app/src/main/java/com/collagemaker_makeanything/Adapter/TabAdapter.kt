@@ -4,10 +4,11 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.photoeditorpolishanything.Fragment.BorderFragment
-import com.example.photoeditorpolishanything.Fragment.LayoutFragment
-import com.example.photoeditorpolishanything.Fragment.MarginFragment
-import com.example.photoeditorpolishanything.Fragment.RatioFragment
+import com.collagemaker_makeanything.Fragment.BorderFragment
+import com.collagemaker_makeanything.Fragment.LayoutFragment
+import com.collagemaker_makeanything.Fragment.MarginFragment
+import com.collagemaker_makeanything.Fragment.RatioFragment
+
 
 
 class TabAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
